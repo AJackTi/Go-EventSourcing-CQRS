@@ -11,10 +11,17 @@ dev:
 	@echo Starting dev docker compose
 	docker-compose -f docker-compose.yaml up -d --build
 
+down_dev:
+	@echo Starting local docker compose
+	docker-compose -f docker-compose.yaml down
+
 local:
 	@echo Starting local docker compose
 	docker-compose -f docker-compose.local.yaml up -d --build
 
+down_local:
+	@echo Starting local docker compose
+	docker-compose -f docker-compose.local.yaml down
 
 # ==============================================================================
 # Docker support

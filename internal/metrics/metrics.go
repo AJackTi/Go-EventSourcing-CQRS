@@ -89,6 +89,10 @@ func NewESMicroserviceMetrics(cfg *config.Config) *ESMicroserviceMetrics {
 			Name: fmt.Sprintf("%s_create_order_http_requests_total", cfg.ServiceName),
 			Help: "The total number of create order http requests",
 		}),
+		CompleteOrderHttpRequests: promauto.NewCounter(prometheus.CounterOpts{
+			Name: fmt.Sprintf("%s_complete_order_http_requests_total", cfg.ServiceName),
+			Help: "The total number of complete order http requests",
+		}),
 		UpdateOrderHttpRequests: promauto.NewCounter(prometheus.CounterOpts{
 			Name: fmt.Sprintf("%s_update_order_http_requests_total", cfg.ServiceName),
 			Help: "The total number of update order http requests",
@@ -114,8 +118,8 @@ func NewESMicroserviceMetrics(cfg *config.Config) *ESMicroserviceMetrics {
 			Help: "The total number of cancel order http requests",
 		}),
 		CompleteOrderGrpcRequests: promauto.NewCounter(prometheus.CounterOpts{
-			Name: fmt.Sprintf("%s_complete_order_http_requests_total", cfg.ServiceName),
-			Help: "The total number of complete order http requests",
+			Name: fmt.Sprintf("%s_complete_order_grpc_requests_total", cfg.ServiceName),
+			Help: "The total number of complete order grpc requests",
 		}),
 		ChangeAddressOrderGrpcRequests: promauto.NewCounter(prometheus.CounterOpts{
 			Name: fmt.Sprintf("%s_change_address_order_gRPC_requests_total", cfg.ServiceName),
